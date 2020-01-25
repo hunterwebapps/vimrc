@@ -1,27 +1,33 @@
 #!/bin/bash
 
-GIT_PATH=~/vimrc
-
-mkdir -p $GIT_PATH
-
-rm $GIT_PATH/.vimrc
-cp ~/.vimrc $GIT_PATH/.vimrc
-if [ -f "~/.vimrc.bak" ]; then
-  rm ~/.vimrc
-  mv ~/.vimrc.bak ~/.vimrc
+if [ ! -f ~/.vimrc ] || [ ! -f ~/.tmux.conf ] || [ ! -d ~/.vim ]; then
+  echo "ViM Not Configured. Cannot eject."
+  exit 1
 fi
 
-rm $GIT_PATH/.tmux.conf
-cp ~/.tmux.conf $GIT_PATH/.tmux.conf
-if [ -f "~/.tmux.conf.bak" ]; then
-  rm ~/.tmux.conf
-  mv ~/.tmux.conf.bak ~/.tmux.conf
+echo "Ejecting..."
+
+[ ! -d ~/vimrc ] && mkdir ~/vimrc
+
+\cp ~/.vimrc ~/vimrc/.vimrc
+
+\cp ~/.tmux.conf ~/vimrc/.tmux.conf
+
+\cp -r ~/.vim ~/vimrc
+
+read -p "Clean local machine? (y/n)" CLEAN
+
+if [ ! CLEAN != "y" ]; then
+  echo "Done."
+  exit 0
 fi
 
-rm -rf $GIT_PATH/.vim
-cp -rf ~/.vim $GIT_PATH/.vim
-if [ -d "~/.vim.bak" ]; then
-  rm -rf ~/.vim
-  mv ~/.vim.bak ~/.vim
-fi
+echo "Cleaning..."
+
+rm ~/.vimrc
+rm ~/.tmux.conf
+rm -rf ~/.vim
+rm ~/.viminfo
+
+echo "Done."
 

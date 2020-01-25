@@ -13,7 +13,9 @@ echo "Ejecting..."
 
 \cp ~/.tmux.conf ~/vimrc/.tmux.conf
 
-\cp -r ~/.vim ~/vimrc
+\cp ~/.vim/coc-settings.json ~/vimrc/.vim/coc-settings.json
+
+\cp -r ~/.vim/colors ~/vimrc/.vim
 
 read -p "Clean local machine? (y/n)" CLEAN
 

@@ -40,6 +40,8 @@ fi
 VIM_START=~/.vim/pack/hunter/start
 GIT_URL=https://github.com
 
+[ ! -d $VIM_START ] && mkdir -p $VIM_START
+
 [ ! -d "$VIM_START/ctrlp.vim" ] && git clone $GIT_URL/ctrlpvim/ctrlp.vim.git $VIM_START/ctrlp.vim
 
 [ ! -d "$VIM_START/vim-vue" ] && git clone $GIT_URL/posva/vim-vue.git $VIM_START/vim-vue

@@ -1,7 +1,12 @@
 #!/bin/bash
 
+if [ ! -d ~/vimrc/.git ]; then
+  echo "~/vimrc not found."
+  exit 1
+fi
+
 if [ ! -f ~/.vimrc ] || [ ! -f ~/.tmux.conf ] || [ ! -d ~/.vim ]; then
-  echo "ViM Not Configured. Cannot eject."
+  echo "ViM Not Configured Properly. Cannot eject."
   exit 1
 fi
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -f ~/.vimrc ] || [ -f ~/.tmux.conf ] || [ -d ~/.vim ]; then
+if [ -f ~/.vimrc ]; then
   read -p "ViM Already Configured. Overwrite? (y/n)" OVERWRITE
 
   if [ $OVERWRITE != "y" ]; then

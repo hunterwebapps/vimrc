@@ -18,6 +18,10 @@ fi
 echo "Installing jancarius' configuration..."
 
 SRC=$(dirname $BASH_SOURCE)
+VIM_START=~/.vim/pack/hunter/start
+GIT_URL=https://github.com
+
+[ ! -d $VIM_START ] && mkdir -p $VIM_START
 
 \cp "$SRC/.vimrc" ~/.vimrc
 
@@ -38,18 +42,16 @@ if ! [ -x "$(command -v ack)" ]; then
   apt-get -y install ack
 fi
 
-VIM_START=~/.vim/pack/hunter/start
-GIT_URL=https://github.com
-
-[ ! -d $VIM_START ] && mkdir -p $VIM_START
-
 [ ! -d "$VIM_START/ctrlp.vim" ] && git clone $GIT_URL/ctrlpvim/ctrlp.vim.git $VIM_START/ctrlp.vim
 
 [ ! -d "$VIM_START/vim-vue" ] && git clone $GIT_URL/posva/vim-vue.git $VIM_START/vim-vue
 
 [ ! -d "$VIM_START/nerdtree" ] && git clone $GIT_URL/preservim/nerdtree.git $VIM_START/nerdtree
 
-[ ! -d "$VIM_START/coc.nvim" ] && git clone $GIT_URL/neoclide/coc.nvim.git $VIM_START/coc.nvim
+if [ ! -d "$VIM_START/coc.nvim" ]; then
+  git clone $GIT_URL/neoclide/coc.nvim.git $VIM_START/coc.nvim
+  bash $VIM_START/coc.nvim/install.sh
+fi
 
 [ ! -d "$VIM_START/ack.vim" ] && git clone $GIT_URL/mileszs/ack.vim.git $VIM_START/ack.vim
 
@@ -73,7 +75,6 @@ GIT_URL=https://github.com
 
 [ ! -d "$VIM_START/vim-rooter" ] && git clone $GIT_URL/airblade/vim-rooter.git $VIM_START/vim-rooter
 
-vim +"silent call coc#util#install()" +qall
 vim +"silent CocInstall coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-emmet coc-snippets coc-git coc-xml coc-markdownlint coc-explorer" +qall
 
 echo "Done."

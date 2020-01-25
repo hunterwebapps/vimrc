@@ -20,7 +20,7 @@ echo "Ejecting..."
 
 \cp ~/.vim/coc-settings.json ~/vimrc/.vim/coc-settings.json
 
-\cp -r ~/.vim/colors ~/vimrc/.vim
+\cp -r ~/.vim/colors ~/vimrc/.vim/colors
 
 read -p "Clean local machine? (y/n)" CLEAN
 

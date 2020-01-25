@@ -24,7 +24,7 @@ SRC=$(dirname $BASH_SOURCE)
 \cp "$SRC/.tmux.conf" ~/.tmux.conf
 
 \cp "$SRC/.vim/coc-settings.json" ~/.vim/coc-settings.json
-\cp -r "$SRC/.vim/colors" ~/.vim
+\cp -r "$SRC/.vim/colors" ~/.vim/colors
 
 if ! [ -x "$(command -v tmux)"  ]; then
   apt-get -y install tmux

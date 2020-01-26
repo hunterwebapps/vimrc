@@ -5,7 +5,12 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd../../..'
 
-export PS1='[\w]\[\033[00m\] > '
+# Git
+alias gs="git status"
+alias gac="git add . && git commit -m"
+alias gaca="git add --all && git commit --amend --no-edit"
+
+export PS1="[\[$(tput sgr0)\]\[\033[38;5;75m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]] \[$(tput sgr0)\]\[\033[38;5;75m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 export EDITOR=vim
 

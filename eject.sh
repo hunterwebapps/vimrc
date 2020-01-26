@@ -5,7 +5,7 @@ if [ ! -d ~/vimrc/.git ]; then
   exit 1
 fi
 
-if [ ! -f ~/.vimrc ] || [ ! -f ~/.tmux.conf ] || [ ! -d ~/.vim ]; then
+if [ ! -f ~/.vimrc ] || [ ! -f ~/.tmux.conf ] || [ ! -f ~/.bashrc ] || [ ! -d ~/.vim ]; then
   echo "ViM Not Configured Properly. Cannot eject."
   exit 1
 fi
@@ -17,6 +17,8 @@ echo "Ejecting..."
 \cp ~/.vimrc ~/vimrc/.vimrc
 
 \cp ~/.tmux.conf ~/vimrc/.tmux.conf
+
+\cp ~/.bashrc ~/vimrc/.bashrc
 
 \cp ~/.vim/coc-settings.json ~/vimrc/.vim/coc-settings.json
 
@@ -37,6 +39,23 @@ rm ~/.vimrc
 rm ~/.tmux.conf
 rm -rf ~/.vim
 rm ~/.viminfo
+
+if [ ! -f ~/.vimrc.bak ] && [ ! -f ~/.tmux.conf.bak ] && [ ! -f ~/.bashrc.bak ] && [ ! -d ~/.vim.bak ]; then
+  echo "Done."
+  exit 0
+fi
+
+read -p "Backups found. Restore? (y/n) " RESTORE
+
+if [ $RESTORE != "y" ]; then
+  echo "Done."
+  exit 0
+fi
+
+[ -f ~/.vimrc.bak ] && mv ~/.vimrc.bak ~/.vimrc
+[ -f ~/.tmux.conf ] && mv ~/.tmux.conf.bak ~/.tmux.conf
+[ -f ~/.bashrc.bak ] && mv ~/.bashrc.bak ~/.bashrc
+[ -d ~/.vim.bak ] && mv ~/.vim.bak ~/.vim
 
 echo "Done."
 

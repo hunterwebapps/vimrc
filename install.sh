@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -f ~/.vimrc ]; then
-  read -p "ViM Already Configured. Overwrite? (y/n) " OVERWRITE
+  read -p "ViM Already Configured. Backup? (y/n) " OVERWRITE
 
   if [ $OVERWRITE != "y" ]; then
     echo "Cancelled."
@@ -10,9 +10,10 @@ if [ -f ~/.vimrc ]; then
 
   echo "Removing existing configuration..."
 
-  [ -f ~/.vimrc ] && rm ~/.vimrc
-  [ -f ~/.tmux.conf ] && rm ~/.tmux.conf
-  [ -d ~/.vim ] && rm -rf ~/.vim
+  [ -f ~/.vimrc ] && mv ~/.vimrc ~/.vimrc.bak
+  [ -f ~/.tmux.conf ] && mv ~/.tmux.conf ~/.tmux.conf.bak
+  [ -f ~/.bashrc ] && mv ~/.bashrc ~/.bashrc.bak
+  [ -d ~/.vim ] && mv ~/.vim ~/.vim.bak
 fi
 
 echo "Installing jancarius' configuration..."
@@ -27,9 +28,13 @@ GIT_URL=https://github.com
 
 \cp "$SRC/.tmux.conf" ~/.tmux.conf
 
+\cp "$SRC/.bashrc" ~/.bashrc
+
 \cp "$SRC/.vim/coc-settings.json" ~/.vim/coc-settings.json
 
 \cp -r "$SRC/.vim/colors" ~/.vim/colors
+
+\cp -r "$SRC/.vim/autoload" ~/.vim/autoload
 
 if ! [ -x "$(command -v tmux)"  ]; then
   apt-get -y install tmux
@@ -58,6 +63,8 @@ git clone $GIT_URL/mileszs/ack.vim.git $VIM_START/ack.vim
 git clone $GIT_URL/OmniSharp/omnisharp-vim.git $VIM_START/omnisharp-vim
 
 git clone $GIT_URL/pangloss/vim-javascript.git $VIM_START/vim-javascript
+
+git clone $GIT_URL/MaxMEllon/vim-jsx-pretty.git $VIM_START/vim-jsx-pretty
 
 git clone $GIT_URL/tpope/vim-fugitive.git $VIM_START/vim-fugitive
 

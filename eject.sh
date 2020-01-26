@@ -22,9 +22,9 @@ echo "Ejecting..."
 
 \cp -r ~/.vim/colors ~/vimrc/.vim
 
-read -p "Clean local machine? (y/n)" CLEAN
+read -p "Clean local machine? (y/n) " CLEAN
 
-if [ CLEAN != "y" ]; then
+if [ $CLEAN != "y" ]; then
   echo "Done."
   exit 0
 fi

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -f ~/.vimrc ]; then
-  read -p "ViM Already Configured. Overwrite? (y/n)" OVERWRITE
+  read -p "ViM Already Configured. Overwrite? (y/n) " OVERWRITE
 
   if [ $OVERWRITE != "y" ]; then
     echo "Cancelled."
@@ -28,6 +28,7 @@ GIT_URL=https://github.com
 \cp "$SRC/.tmux.conf" ~/.tmux.conf
 
 \cp "$SRC/.vim/coc-settings.json" ~/.vim/coc-settings.json
+
 \cp -r "$SRC/.vim/colors" ~/.vim/colors
 
 if ! [ -x "$(command -v tmux)"  ]; then

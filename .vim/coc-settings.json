@@ -1,5 +1,6 @@
 {
   "codeLens.enable": true,
-  "suggest.minTriggerInputLength": 0
+  "suggest.minTriggerInputLength": 0,
+  "git.realtimeGutters": false
 }
 

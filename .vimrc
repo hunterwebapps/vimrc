@@ -54,17 +54,17 @@ nmap <F3> :NERDTreeToggle<CR>
 let g:NERDTreeMouseMode=3
 let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeMinimalUI=1
-let g:NERDTreeIndicatorMapCustom={
-    \ "Modified"  : "*",
-    \ "Staged"    : "+",
-    \ "Untracked" : "_",
-    \ "Renamed"   : "R",
-    \ "Unmerged"  : "-",
-    \ "Deleted"   : "X",
-    \ "Dirty"     : "~",
-    \ "Clean"     : "O",
-    \ "Ignored"   : ".",
-    \ "Unknown"   : "?"
+let g:nerdtreeindicatormapcustom={
+    \ "modified"  : "*",
+    \ "staged"    : "+",
+    \ "untracked" : "_",
+    \ "renamed"   : "r",
+    \ "unmerged"  : "-",
+    \ "deleted"   : "x",
+    \ "dirty"     : "~",
+    \ "clean"     : "o",
+    \ "ignored"   : ".",
+    \ "unknown"   : "?"
     \ }
 
 " NERDCommenter
@@ -86,6 +86,23 @@ let g:rooter_silent_chdir = 1
 let g:OmniSharp_server_stdio = 1
 
 " coc.nvim
+let g:coc_global_extensions = [
+    \ 'coc-json',
+    \ 'coc-tsserver',
+    \ 'coc-html',
+    \ 'coc-css',
+    \ 'coc-vetur',
+    \ 'coc-yaml',
+    \ 'coc-emmet',
+    \ 'coc-snippets',
+    \ 'coc-git',
+    \ 'coc-xml',
+    \ 'coc-markdownlint',
+    \ 'coc-explorer',
+    \ 'coc-omnisharp',
+    \ 'coc-fsharp'
+    \ ]
+
 inoremap <silent><expr> <c-space> coc#refresh()
 
 inoremap <silent><expr> <TAB>

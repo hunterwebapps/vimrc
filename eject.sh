@@ -20,11 +20,11 @@ echo "Ejecting..."
 
 \cp ~/.vim/coc-settings.json ~/vimrc/.vim/coc-settings.json
 
-\cp -r ~/.vim/colors ~/vimrc/.vim/colors
+\cp -r ~/.vim/colors ~/vimrc/.vim
 
 read -p "Clean local machine? (y/n)" CLEAN
 
-if [ ! CLEAN != "y" ]; then
+if [ CLEAN != "y" ]; then
   echo "Done."
   exit 0
 fi

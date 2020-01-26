@@ -22,6 +22,8 @@ echo "Ejecting..."
 
 \cp -r ~/.vim/colors ~/vimrc/.vim
 
+\cp -r ~/.vim/autoload ~/vimrc/.vim
+
 read -p "Clean local machine? (y/n) " CLEAN
 
 if [ $CLEAN != "y" ]; then

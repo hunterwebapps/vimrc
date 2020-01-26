@@ -19,11 +19,8 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-set background=dark
-let g:edge_style = 'neon'
-let g:edge_disable_italic_comment=1
 let &colorcolumn=join(range(81,999),",")
-colorscheme edge
+colorscheme onehalfdark
 
 " search
 set wildmenu
@@ -54,18 +51,18 @@ nmap <F3> :NERDTreeToggle<CR>
 let g:NERDTreeMouseMode=3
 let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeMinimalUI=1
-let g:nerdtreeindicatormapcustom={
-    \ "modified"  : "*",
-    \ "staged"    : "+",
-    \ "untracked" : "_",
-    \ "renamed"   : "r",
-    \ "unmerged"  : "-",
-    \ "deleted"   : "x",
-    \ "dirty"     : "~",
-    \ "clean"     : "o",
-    \ "ignored"   : ".",
-    \ "unknown"   : "?"
-    \ }
+" let g:nerdtreeindicatormapcustom={
+    " \ "modified"  : "*",
+    " \ "staged"    : "+",
+    " \ "untracked" : "_",
+    " \ "renamed"   : "r",
+    " \ "unmerged"  : "-",
+    " \ "deleted"   : "x",
+    " \ "dirty"     : "~",
+    " \ "clean"     : "o",
+    " \ "ignored"   : ".",
+    " \ "unknown"   : "?"
+    " \ }
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1
@@ -81,6 +78,9 @@ let g:javascript_plugin_jsdoc = 1
 " vim-rooter
 let g:rooter_use_lcd = 1
 let g:rooter_silent_chdir = 1
+
+" vim-airline
+let g:airline_theme="onehalfdark"
 
 " Omnisharp-roslyn
 let g:OmniSharp_server_stdio = 1

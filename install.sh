@@ -63,6 +63,8 @@ git clone $GIT_URL/tpope/vim-fugitive.git $VIM_START/vim-fugitive
 
 git clone $GIT_URL/vim-airline/vim-airline.git $VIM_START/vim-airline
 
+git clone $GIT_URL/vim-airline/vim-airline-themes.git $VIM_START/vim-airline-themes
+
 git clone $GIT_URL/tpope/vim-surround.git $VIM_START/vim-surround
 
 git clone $GIT_URL/jiangmiao/auto-pairs.git $VIM_START/auto-pairs

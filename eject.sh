@@ -53,7 +53,7 @@ if [ $RESTORE != "y" ]; then
 fi
 
 [ -f ~/.vimrc.bak ] && mv ~/.vimrc.bak ~/.vimrc
-[ -f ~/.tmux.conf ] && mv ~/.tmux.conf.bak ~/.tmux.conf
+[ -f ~/.tmux.conf.bak ] && mv ~/.tmux.conf.bak ~/.tmux.conf
 [ -f ~/.bashrc.bak ] && mv ~/.bashrc.bak ~/.bashrc
 [ -d ~/.vim.bak ] && mv ~/.vim.bak ~/.vim
 

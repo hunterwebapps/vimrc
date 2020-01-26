@@ -20,7 +20,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 let &colorcolumn=join(range(81,999),",")
-colorscheme onehalfdark
+colorscheme codedark
 
 " search
 set wildmenu
@@ -80,7 +80,7 @@ let g:rooter_use_lcd = 1
 let g:rooter_silent_chdir = 1
 
 " vim-airline
-let g:airline_theme="onehalfdark"
+let g:airline_theme="codedark"
 
 " Omnisharp-roslyn
 let g:OmniSharp_server_stdio = 1

@@ -51,18 +51,18 @@ nmap <F3> :NERDTreeToggle<CR>
 let g:NERDTreeMouseMode=3
 let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeMinimalUI=1
-" let g:nerdtreeindicatormapcustom={
-    " \ "modified"  : "*",
-    " \ "staged"    : "+",
-    " \ "untracked" : "_",
-    " \ "renamed"   : "r",
-    " \ "unmerged"  : "-",
-    " \ "deleted"   : "x",
-    " \ "dirty"     : "~",
-    " \ "clean"     : "o",
-    " \ "ignored"   : ".",
-    " \ "unknown"   : "?"
-    " \ }
+let g:nerdtreeindicatormapcustom={
+    \ "modified"  : "*",
+    \ "staged"    : "+",
+    \ "untracked" : "_",
+    \ "renamed"   : "r",
+    \ "unmerged"  : "-",
+    \ "deleted"   : "x",
+    \ "dirty"     : "~",
+    \ "clean"     : "o",
+    \ "ignored"   : ".",
+    \ "unknown"   : "?"
+    \ }
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1

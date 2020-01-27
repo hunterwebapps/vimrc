@@ -36,6 +36,8 @@ GIT_URL=https://github.com
 
 \cp -r "$SRC/.vim/autoload" ~/.vim/autoload
 
+apt-get update
+
 if ! [ -x "$(command -v tmux)"  ]; then
   apt-get -y install tmux
 fi

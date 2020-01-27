@@ -20,7 +20,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 let &colorcolumn=join(range(81,999),",")
-
 colorscheme codedark
 
 " search

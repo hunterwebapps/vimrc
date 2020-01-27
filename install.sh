@@ -36,22 +36,26 @@ GIT_URL=https://github.com
 
 \cp -r "$SRC/.vim/autoload" ~/.vim/autoload
 
-apt-get update
+sudo apt-get update
 
 if ! [ -x "$(command -v tmux)"  ]; then
-  apt-get -y install tmux
+  sudo apt-get -y install tmux
 fi
 
 if ! [ -x "$(command -v vim)" ]; then
-  apt-get -y install vim
+  sudo apt-get -y install vim
 fi
 
 if ! [ -x "$(command -v yarn)" ]; then
-  apt-get -y install yarn
+  if ! [ -x "$(command -v npm)"]; then
+    sudo apt-get -y install npm
+  fi
+
+  sudo npm i -g yarn
 fi
 
 if ! [ -x "$(command -v ack)" ]; then
-  apt-get -y install ack
+  sudo apt-get -y install ack
 fi
 
 git clone $GIT_URL/ctrlpvim/ctrlp.vim.git $VIM_START/ctrlp.vim

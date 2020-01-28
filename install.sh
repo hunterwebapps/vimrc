@@ -14,6 +14,7 @@ if [ -f ~/.vimrc ]; then
   [ -f ~/.tmux.conf ] && mv ~/.tmux.conf ~/.tmux.conf.bak
   [ -f ~/.bashrc ] && mv ~/.bashrc ~/.bashrc.bak
   [ -d ~/.vim ] && mv ~/.vim ~/.vim.bak
+  [ -d ~/.tmux ] && mv ~/.tmux ~/.tmux.bak
 fi
 
 echo "Installing jancarius' configuration..."
@@ -36,6 +37,8 @@ GIT_URL=https://github.com
 
 \cp -r "$SRC/.vim/autoload" ~/.vim/autoload
 
+\cp -r "$SRC/.tmux" ~/.tmux
+
 sudo apt-get update
 
 if ! [ -x "$(command -v tmux)"  ]; then
@@ -44,6 +47,7 @@ fi
 
 if ! [ -x "$(command -v vim)" ]; then
   sudo apt-get -y install vim
+  sudo apt-get -y install vim-gnome
 fi
 
 if ! [ -x "$(command -v yarn)" ]; then
@@ -94,5 +98,5 @@ git clone $GIT_URL/neoclide/coc.nvim.git $VIM_START/coc.nvim
 cd $VIM_START/coc.nvim
 yarn install
 
-echo "Done."
+echo "Done. Don't forget to install VcXsrv if you're on WSL."
 

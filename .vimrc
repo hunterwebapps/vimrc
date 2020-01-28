@@ -30,17 +30,16 @@ set showmatch
 set ignorecase
 set smartcase
 
-" tabbing
+" input
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-
-set hidden
 set autowrite
 set autoread
 set backspace=indent,eol,start
 set mouse=a
+set clipboard=unnamedplus
 
 " vim-vue
 let g:vim_vue_plugin_load_full_syntax=1

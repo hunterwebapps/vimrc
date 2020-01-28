@@ -26,6 +26,8 @@ echo "Ejecting..."
 
 \cp -r ~/.vim/autoload ~/vimrc/.vim
 
+\cp -r ~/.tmux ~/vimrc/.tmux
+
 read -p "Clean local machine? (y/n) " CLEAN
 
 if [ $CLEAN != "y" ]; then
@@ -39,8 +41,9 @@ rm ~/.vimrc
 rm ~/.tmux.conf
 rm -rf ~/.vim
 rm ~/.viminfo
+rm ~/.tmux
 
-if [ ! -f ~/.vimrc.bak ] && [ ! -f ~/.tmux.conf.bak ] && [ ! -f ~/.bashrc.bak ] && [ ! -d ~/.vim.bak ]; then
+if [ ! -f ~/.vimrc.bak ] && [ ! -f ~/.tmux.conf.bak ] && [ ! -f ~/.bashrc.bak ] && [ ! -d ~/.vim.bak ] && [ ! -d ~/.tmux.bak ]; then
   echo "Done."
   exit 0
 fi
@@ -56,6 +59,7 @@ fi
 [ -f ~/.tmux.conf.bak ] && mv ~/.tmux.conf.bak ~/.tmux.conf
 [ -f ~/.bashrc.bak ] && mv ~/.bashrc.bak ~/.bashrc
 [ -d ~/.vim.bak ] && mv ~/.vim.bak ~/.vim
+[ -d ~/.tmux.bak ] && mv ~/.tmux.bak ~/.tmux
 
 echo "Done."
 

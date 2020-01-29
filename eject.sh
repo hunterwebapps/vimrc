@@ -26,8 +26,6 @@ echo "Ejecting..."
 
 \cp -r ~/.vim/autoload ~/vimrc/.vim
 
-\cp -r ~/.tmux ~/vimrc/.tmux
-
 read -p "Clean local machine? (y/n) " CLEAN
 
 if [ $CLEAN != "y" ]; then

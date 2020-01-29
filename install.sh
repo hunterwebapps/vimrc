@@ -37,7 +37,12 @@ GIT_URL=https://github.com
 
 \cp -r "$SRC/.vim/autoload" ~/.vim/autoload
 
-\cp -r "$SRC/.tmux" ~/.tmux
+git clone $GIT_URL/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+if grep -q Microsoft /proc/version; then
+  WINHOME=$(cmd.exe /C "cd /D %USERPROFILE% && bash.exe -c pwd")
+  \cp "$SRC/config.xlaunch" "$WINHOME/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/config.xlaunch"
+fi
 
 sudo apt-get update
 
@@ -98,5 +103,5 @@ git clone $GIT_URL/neoclide/coc.nvim.git $VIM_START/coc.nvim
 cd $VIM_START/coc.nvim
 yarn install
 
-echo "Done. Don't forget to install VcXsrv if you're on WSL."
+echo "Done. Don't forget:\n1. To install VcXsrv if you're on WSL\n2. Press <Leader>I in tmux to install plugins."
 

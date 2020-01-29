@@ -103,5 +103,5 @@ git clone $GIT_URL/neoclide/coc.nvim.git $VIM_START/coc.nvim
 cd $VIM_START/coc.nvim
 yarn install
 
-echo "Done. Don't forget:\n1. To install VcXsrv if you're on WSL\n2. Press <Leader>I in tmux to install plugins."
+printf "Done. Don't forget:\n1. To install VcXsrv if you're on WSL\n2. Press <Leader>I in tmux to install plugins.\n3. Check if ViM is compiled with Clipboard support. If not, apt-get vim-gnome."
 

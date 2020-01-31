@@ -15,4 +15,5 @@ export PS1="[\[$(tput sgr0)\]\[\033[38;5;75m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\
 export EDITOR=vim
 
 export DISPLAY=localhost:0.0
+export DOTNET_CLI_TELEMETRY_OPTOUT=true
 

@@ -81,6 +81,10 @@ git clone $GIT_URL/pangloss/vim-javascript.git $VIM_START/vim-javascript
 
 git clone $GIT_URL/fsharp/vim-fsharp.git $VIM_START/vim-fsharp
 
+git clone $GIT_URL/fatih/vim-go.git $VIM_START/vim-go
+
+git clone $GIT_URL/rust-lang/rust.vim $VIM_START/rust.vim
+
 git clone $GIT_URL/MaxMEllon/vim-jsx-pretty.git $VIM_START/vim-jsx-pretty
 
 git clone $GIT_URL/tpope/vim-fugitive.git $VIM_START/vim-fugitive
